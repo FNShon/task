@@ -38,7 +38,7 @@ function main() {
     imgtext.className = 'card_body_text';
 
     const img = document.createElement('img');
-    attr href =
+    
     img.src = data.image;
 
     body.append(img);
