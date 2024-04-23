@@ -6,7 +6,17 @@
 // - Words are separated by spaces, and the sentence may contain leading or trailing spaces.
 // - Consider only spaces as word separators (no punctuation splitting).
 export function reverseWords(sentence) {
+    const words = sentence.split(' ').filter(space => space !== '');
+    /*const reverseSentence = '';
+    for (let i = 0; i > 0; i--) {
+        reverseSentence += words[i];
+    }
+    return reverseSentence;*/
+    const reverseSentence = words.reverse().join(' ');
+    return reverseSentence;
+
 }
+
 
 
 // Task: Word Frequency Counter
@@ -20,6 +30,14 @@ export function reverseWords(sentence) {
 // - The function should not count punctuation as part of the words.
 // - Return the result with words in lowercase.
 export function wordFrequency(text) {
+    const wordLower = text.toLowerCase();
+    const noPuntiation = wordLower.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/,"");
+    const words = noPuntiation.split(" ")
+    const frequencyOfWords = {};
+    for (let word of words) {
+        frequencyOfWords[word] = (frequencyOfWords[word] || 0) + 1;
+    }
+    return frequencyOfWords;
 }
 
 // Task: Top N Frequent Words
@@ -32,4 +50,9 @@ export function wordFrequency(text) {
 // - Words are separated by spaces, and the text may contain punctuation.
 // - Ignore punctuation, and consider only alphabetic characters for word separation.
 export function topNFrequentWords(text, n) {
+    const words = text.split(" ");
+    const wordCount = {};
+
+    return wordCount;
+    
 }
